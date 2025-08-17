@@ -1,4 +1,5 @@
 import requests
+import sys
 
 from fastmcp import FastMCP
 
@@ -30,4 +31,18 @@ def get_current_weather(location: str):
     return format_weather_data(weather_data)
 
 
-mcp.run(transport="streamable-http")
+def main():
+    """程序入口点"""
+    if len(sys.argv) > 1 and sys.argv[1] == "--help":
+        print("天气获取小工具")
+        print("使用方法:")
+        print("  weather001              # 运行MCP服务器")
+        print("  weather001 --help       # 显示帮助信息")
+        return
+    
+    # 运行MCP服务器
+    mcp.run(transport="streamable-http")
+
+
+if __name__ == "__main__":
+    main()
