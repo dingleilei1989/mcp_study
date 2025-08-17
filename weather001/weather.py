@@ -1,6 +1,7 @@
 import requests
 import json
 from cities_db import get_city_coords
+from common.Response import fail, ReturnCode, success
 from openrouter_api import OpenRouterAPI
 
 API_KEY = 'bb1bdc1d24213405ada30579a5a97f12'  
@@ -11,7 +12,8 @@ def get_weather(city):
     try:
         coords = get_city_coords(city)
         if not coords:
-            return "城市不在数据库中，请添加或使用其他城市"
+            fail_response = fail(message="参数错误", code=ReturnCode.PARAM_ERROR)
+            return fail_response
             
         params = {
             'lat': coords['lat'],
@@ -46,14 +48,15 @@ def get_weather(city):
         
         description = data['weather'][0]['description'].lower()
         translated_weather = weather_translation.get(description, data['weather'][0]['description'])
-        
-        return {
+
+        success_response = success(data={
             '城市': data['name'],
             '温度': f"{data['main']['temp']}°C",
             '天气状况': translated_weather,
             '湿度': f"{data['main']['humidity']}%",
             '风速': f"{data['wind']['speed']} m/s"
-        }
+        })
+        return success_response
     except requests.exceptions.RequestException as e:
         return f"请求错误: {str(e)}"
     except (KeyError, json.JSONDecodeError):
