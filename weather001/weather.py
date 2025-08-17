@@ -83,7 +83,7 @@ if __name__ == '__main__':
     print("天气查询程序（输入q退出）")
     print("测试模式（输入t进入测试模式）")
     
-    openrouter = OpenRouterAPI("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") if 'OpenRouterAPI' in globals() else None
+    openrouter = OpenRouterAPI("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") if 'OpenRouterAPI' in globals() else None
     
     while True:
         user_input = input("\n请输入城市名称或包含城市名称的文本(输入q退出/t测试): ").strip()

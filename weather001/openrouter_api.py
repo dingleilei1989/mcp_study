@@ -20,7 +20,7 @@ class OpenRouterAPI:
             }
             
             payload = {
-                "model": "deepseek/deepseek-chat:free",
+                "model": "deepseek/deepseek-chat-v3-0324:free",
                 "messages": [
                     {
                         "role": "user",
@@ -37,6 +37,7 @@ class OpenRouterAPI:
             response.raise_for_status()
             
             data = response.json()
+            print(data)
             return data['choices'][0]['message']['content']
             
         except requests.exceptions.RequestException as e:
