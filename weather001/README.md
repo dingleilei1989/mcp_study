@@ -85,6 +85,15 @@ To publish this package to PyPI, follow these steps:
    twine upload dist/*
    ```
 
+## Dependency Notes
+
+This project requires pydantic>=1.5.0 to ensure compatibility with various environments. 
+The direct dependency on pydantic has been relaxed from >=2.0.0 to >=1.5.0 to address 
+compatibility issues in some environments where only older versions of pydantic are available.
+
+The fastmcp library, which this project depends on, is compatible with both pydantic 1.x and 2.x,
+so this change should not affect functionality.
+
 ## License
 
 MIT

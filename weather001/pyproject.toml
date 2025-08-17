@@ -1,6 +1,6 @@
 [project]
 name = "weather001"
-version = "0.1.0"
+version = "0.1.1"
 description = "A weather application using MCP"
 authors = [
     { name = "Your Name", email = "your.email@example.com" }
@@ -11,7 +11,6 @@ requires-python = ">=3.8"
 dependencies = [
     "requests>=2.31.0",
     "python-dotenv>=1.0.0",
-    "pydantic>=2.0.0",
     "fastmcp>=2.0.0",
 ]
 classifiers = [

@@ -6,6 +6,9 @@ from fastmcp import FastMCP
 from common.Response import Response
 from weather import get_weather
 
+# 项目版本
+__version__ = "0.1.1"
+
 mcp = FastMCP("天气获取小工具")
 
 
@@ -33,12 +36,17 @@ def get_current_weather(location: str):
 
 def main():
     """程序入口点"""
-    if len(sys.argv) > 1 and sys.argv[1] == "--help":
-        print("天气获取小工具")
-        print("使用方法:")
-        print("  weather001              # 运行MCP服务器")
-        print("  weather001 --help       # 显示帮助信息")
-        return
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "--help":
+            print("天气获取小工具")
+            print("使用方法:")
+            print("  weather001              # 运行MCP服务器")
+            print("  weather001 --help       # 显示帮助信息")
+            print("  weather001 --version    # 显示版本信息")
+            return
+        elif sys.argv[1] == "--version":
+            print(f"weather001 v{__version__}")
+            return
     
     # 运行MCP服务器
     mcp.run(transport="streamable-http")

@@ -1,0 +1,27 @@
+{
+  "name": "mcpnpx",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "bin": {
+    "mcpnpx": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npx ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A simple MCP tool using @modelcontextprotocol/sdk",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
