@@ -4,13 +4,13 @@
 
 ## 📚 教程目录
 
-| 课程 | 内容 | 文件 |
-|------|------|------|
-| 第一课 | 连接阿里千问模型 | `lesson01_basic_qwen.py` |
-| 第二课 | Prompt Template 和 Chain | `lesson02_prompt_and_chain.py` |
-| 第三课 | 添加工具 (Tools) 能力 | `lesson03_tools.py` |
-| 第四课 | 使用 LangGraph 构建智能体 | `lesson04_langgraph_agent.py` |
-| 第五课 | 带记忆的多轮对话智能体 | `lesson05_memory_agent.py` |
+| 课程 | 内容 | Notebook |
+|------|------|----------|
+| 第一课 | 连接阿里千问模型 | `01_连接千问模型.ipynb` |
+| 第二课 | Prompt Template 和 Chain | `02_Prompt和Chain.ipynb` |
+| 第三课 | 添加工具 (Tools) 能力 | `03_工具Tools.ipynb` |
+| 第四课 | 使用 LangGraph 构建智能体 | `04_LangGraph智能体.ipynb` |
+| 第五课 | 带记忆的多轮对话智能体 | `05_带记忆的智能体.ipynb` |
 
 ## 🚀 快速开始
 
@@ -23,26 +23,24 @@ pip install -r requirements.txt
 
 ### 2. 配置 API Key
 
-```bash
-# 复制环境变量模板
-cp .env.example .env
+获取 API Key: https://dashscope.console.aliyun.com/apiKey
 
-# 编辑 .env 文件，填入你的 API Key
-# DASHSCOPE_API_KEY=your_api_key_here
-```
-
-> 获取 API Key: https://dashscope.console.aliyun.com/apiKey
-
-### 3. 运行教程
+### 3. 启动 JupyterLab
 
 ```bash
-# 依次运行每一课
-python lesson01_basic_qwen.py
-python lesson02_prompt_and_chain.py
-python lesson03_tools.py
-python lesson04_langgraph_agent.py
-python lesson05_memory_agent.py
+# 启动 JupyterLab
+jupyter lab
+
+# 或者使用 Jupyter Notebook
+jupyter notebook
 ```
+
+### 4. 开始学习
+
+1. 打开 `01_连接千问模型.ipynb`
+2. 在第一个代码单元格中设置你的 API Key
+3. 按顺序运行每个单元格，学习每个概念
+4. 完成练习，巩固所学知识
 
 ---
 
