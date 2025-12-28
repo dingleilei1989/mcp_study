@@ -205,7 +205,8 @@ agent = workflow.compile()
 ```python
 from langgraph.prebuilt import create_react_agent
 
-agent = create_react_agent(model, tools)
+# LangGraph >=1.0 使用 prompt 参数设置系统提示词
+agent = create_react_agent(model, tools, prompt="你是一个智能助手")
 result = agent.invoke({"messages": [HumanMessage(content="你好")]})
 ```
 

@@ -5,7 +5,7 @@ langchain-community>=0.3.0
 langchain-openai>=0.2.0
 
 # LangGraph - 用于构建智能体工作流
-langgraph>=0.2.0
+langgraph>=1.0.0
 
 # 阿里千问模型支持
 dashscope>=1.20.0
